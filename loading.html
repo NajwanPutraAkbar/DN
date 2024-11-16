@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen</title>
+    <style>
+        /* Gaya untuk membuat loading screen */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .loading-container {
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .loading-bar-background {
+            width: 100%;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Lapisan A - Background gambar tetap */
+        .loading-bar-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Lapisan B - Warna/Bar yang bergerak dari kiri ke kanan */
+        .loading-bar-progress {
+            width: 0%; /* Mulai dengan lebar 0% */
+            height: 100%;
+            background-color: #ff00f2; /* Ubah dengan warna yang diinginkan */
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0; /* Mulai dari kiri */
+            animation: reveal 3s forwards; /* Animasi untuk bar */
+        }
+
+        /* Keyframes untuk animasi pengisian bar dari kiri ke kanan */
+        @keyframes reveal {
+            from {
+                width: 0%; /* Mulai dengan lebar 0% */
+            }
+            to {
+                width: 100%; /* Berakhir dengan lebar penuh */
+            }
+        }
+
+        .loading-text {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="loading-container">
+    <div class="loading-bar-background">
+        <!-- Background gambar tetap -->
+        <img src="image1.jpg" alt="Background Image">
+
+        <!-- Bar yang bergerak mengungkap gambar -->
+        <div class="loading-bar-progress"></div>
+    </div>
+    <div class="loading-text">Tunggu ya!</div>
+</div>
+
+<script>
+    // Redirect ke halaman lain setelah 3 detik
+    setTimeout(function() {
+        window.location.href = "index2.html"; // Ganti dengan URL halaman yang dituju
+    }, 3000); // 3000ms = 3 detik
+</script>
+
+</body>
+</html>

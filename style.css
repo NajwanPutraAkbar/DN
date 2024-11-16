@@ -1,0 +1,49 @@
+
+/* CSS untuk memberi gaya pada halaman */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    
+    /* Menambahkan Flexbox untuk memusatkan isi container */
+    display: flex;
+    flex-direction: column; /* Mengatur elemen secara vertikal */
+    justify-content: center; /* Memusatkan secara vertikal */
+    align-items: center; /* Memusatkan secara horizontal */
+    text-align: center; /* Memastikan teks di tengah */
+}
+
+h1 {
+    color: #cf6ba9;
+    font-size: 2.5rem;
+    transition: color 0.3s ease;
+}
+
+button {
+    background-color: #cf6ba9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Memberikan jarak antara tombol dan teks */
+}
+
+button:hover {
+    background-color: #a40065;
+}

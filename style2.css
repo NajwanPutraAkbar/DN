@@ -1,0 +1,190 @@
+/* Reset default margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Dancing Script', cursive; 
+    background: linear-gradient(to bottom, #ffb3d9, #ff80bf);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #ff66b2;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.description p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.song-label {
+    margin-bottom: 5px; /* Naikkan label dengan memberi margin */
+    display: inline-block; /* Pastikan label tetap di tempatnya */
+    font-size: 1.1rem; /* Sedikit lebih besar jika diperlukan */
+}
+.music-control {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Jarak antar elemen lebih lega */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+#songSelector {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ff66b2;
+    border-radius: 5px;
+    flex: 1;
+    min-width: 200px;
+}
+
+#toggleMusicBtn {
+    padding: 10px 20px;
+    background-color: #ff66b2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.photo {
+    width: 90%;
+    max-width: 400px;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 10px; /* Sudut gambar melengkung */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek menonjol */
+    background: #fff; /* Latar belakang putih untuk menonjolkan gambar */
+    position: relative; /* Membuat tombol panah terhubung dengan elemen ini */
+}
+
+.thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-btn {
+    font-size: 1.5rem;
+    color: #ff66b2;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.poetry {
+    text-align: center;
+    max-width: 90%;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .description p, .poetry p {
+        font-size: 1rem;
+    }
+
+    #songSelector {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #toggleMusicBtn {
+        width: 100%;
+    }
+
+    .nav-btn {
+        font-size: 1.5rem;
+        color: white; /* Warna teks */
+        background-color: #ff66b2; /* Warna latar belakang tombol */
+        padding: 10px 15px; /* Ruang di dalam tombol */
+        border: 2px solid #ff80bf; /* Warna dan ketebalan border */
+        border-radius: 8px; /* Membuat sudut tombol melengkung */
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Efek bayangan */
+        transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animasi interaksi */
+    }
+    
+    /* Efek hover pada tombol */
+    .nav-btn:hover {
+        background-color: #ff80bf; /* Warna latar lebih terang */
+        transform: scale(1.1); /* Sedikit memperbesar tombol */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih dalam */
+    }
+    
+    /* Efek ketika tombol ditekan */
+    .nav-btn:active {
+        transform: scale(1); /* Kembali ke ukuran semula */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Bayangan lebih kecil */
+    }
+    
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .description p, .poetry p {
+        font-size: 0.9rem;
+    }
+
+    .photo {
+        width: 100%;
+    }
+}
