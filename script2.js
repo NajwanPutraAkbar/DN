@@ -2,17 +2,19 @@
 const audio = document.getElementById('myAudio');
 const toggleMusicBtn = document.getElementById('toggleMusicBtn');
 const songSelector = document.getElementById('songSelector');
-
-// Fungsi untuk mengganti lagu
-songSelector.addEventListener('change', () => {
-    const selectedSong = songSelector.value; // Ambil nilai dari dropdown
-    audio.src = selectedSong; // Ganti sumber audio dengan pilihan
-    audio.pause(); // Pastikan musik berhenti saat lagu baru dipilih
-    toggleMusicBtn.textContent = 'Putar Musik'; // Reset teks tombol
-});
+const openPageBtn = document.getElementById('openPageBtn');
+const mainContent = document.getElementById('mainContent');
 
 // Fungsi untuk memutar/menghentikan musik
 toggleMusicBtn.addEventListener('click', () => {
+    const selectedSong = songSelector.value; // Ambil lagu yang dipilih
+
+    if (!selectedSong) {
+        alert("Silakan pilih lagu terlebih dahulu!");
+        return; // Jangan lanjutkan jika belum ada lagu yang dipilih
+    }
+
+    // Pastikan audio memiliki sumber yang benar sebelum mencoba memutar
     if (audio.paused) {
         audio.play(); // Memutar musik
         toggleMusicBtn.textContent = 'Matikan Musik'; // Ubah teks tombol
@@ -20,6 +22,24 @@ toggleMusicBtn.addEventListener('click', () => {
         audio.pause(); // Menghentikan musik
         toggleMusicBtn.textContent = 'Putar Musik'; // Reset teks tombol
     }
+});
+
+// Fungsi untuk mengganti lagu
+songSelector.addEventListener('change', () => {
+    const selectedSong = songSelector.value; // Ambil nilai dari dropdown
+    if (selectedSong) {
+        audio.src = selectedSong; // Ganti sumber audio dengan pilihan
+        audio.pause(); // Pastikan musik berhenti saat lagu baru dipilih
+        toggleMusicBtn.textContent = 'Putar Musik'; // Reset teks tombol
+        openPageBtn.disabled = false; // Aktifkan tombol
+    }
+});
+
+// Tampilkan konten utama saat tombol "Buka Halaman" diklik
+openPageBtn.addEventListener('click', () => {
+    openPageBtn.style.display = 'none';
+    // Tampilkan konten halaman
+    mainContent.style.display = 'block';
 });
 
 // Modal untuk memperbesar gambar
@@ -38,18 +58,21 @@ images.forEach((image) => {
         modal.style.display = 'flex';
         modalImg.src = e.target.src;
         modalImg.alt = e.target.alt;
+        document.body.style.overflow = 'hidden'; // Menonaktifkan scroll
     });
 });
 
 // Menutup modal
 closeBtn.addEventListener('click', () => {
     modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Mengembalikan scroll
 });
 
 // Menutup modal jika klik di luar gambar
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
         modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Mengembalikan scroll
     }
 });
 
