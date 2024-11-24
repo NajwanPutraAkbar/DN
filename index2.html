@@ -6,20 +6,23 @@
     <title>Galeri Foto dengan Musik</title>
     <link rel="stylesheet" href="style2.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Baloo+2&family=Handlee&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>HAI Akbar</h1>
-
+    <h1>Hello Barhouten!!</h1>
     <div class="description">
-        <p>Selamat datang di galeri foto ini! Nama saya [Nama Anda], dan saya berharap Anda menikmati koleksi foto yang saya sajikan di sini.</p>
-        <p>Untuk pengalaman yang lebih menyenangkan, pilih lagu favorit Anda dan dengarkan musik sambil menjelajahi galeri!</p>
+        <p>Kami sangat senang Anda bisa bergabung. 
+            Nikmati setiap gambar yang kami sajikan,
+            dan rasakan pengalaman lebih menyenangkan dengan mendengarkan musik yang telah dipilih.
+            Pilih lagu favorit Anda, biarkan melodi mengiringi perjalanan visual Anda,
+             dan nikmati setiap momen yang ada!</p>
     </div>
 
     <div class="music-control">
-        <label for="songSelector" class="song-label">Pilih Lagu:</label>
         <select id="songSelector">
-            <option value="" disabled selected>Pilih Lagu</option> <!-- Opsi default -->
+            <option value="" disabled selected hidden>Choose Your Favorit Song</option> 
             <option value="labyrinth.mp3">Labyrinth</option>
             <option value="down_bad.mp3">Down Bad</option>
             <option value="begin_again.mp3">Begin Again</option>
@@ -27,44 +30,52 @@
         <button id="toggleMusicBtn">Putar Musik</button>
     </div>
 
+    <div class="page-control">
+        <button id="openPageBtn" disabled>Buka Halaman</button>
+    </div>
+
     <audio id="myAudio" preload="auto">
-        <source src="labyrinth.mp3" type="audio/mpeg">
         Browser Anda tidak mendukung elemen audio.
     </audio>
 
-    <div class="gallery">
-        <button id="prevBtn" class="nav-btn">←</button>
-        <div class="photo">
-            <img src="image1.jpg" alt="Gambar 1" id="currentImage" class="thumbnail">
+    <div id="mainContent" style="display: none;">
+        <div class="gallery">
+            <div class="photo">
+                <img src="image1.jpg" alt="Gambar 1" id="currentImage" class="thumbnail">
+            </div>
         </div>
-        <button id="nextBtn" class="nav-btn">→</button>
-    </div>
 
-    <div id="myModal" class="modal">
-        <span class="close" id="closeBtn">&times;</span>
-        <img class="modal-content" id="modalImg">
-    </div>
+        <div id="myModal" class="modal">
+            <span class="close" id="closeBtn">&times;</span>
+            <img class="modal-content" id="modalImg">
+        </div>
 
-    <div class="poetry">
-        <h2>Puisi Kehidupan</h2>
-        <p>
-            Dalam hening malam yang penuh dengan bintang,<br>
-            Langit menari bersama bayang-bayang,<br>
-            Di antara debu-debu waktu yang terbuang,<br>
-            Aku mencari jejak langkah yang hilang.
-        </p>
-        <p>
-            Mimpi dan kenyataan berbicara tanpa suara,<br>
-            Di mana kita berlari mengejar asa,<br>
-            Lalu terjatuh dalam diam yang menggetarkan,<br>
-            Namun, di setiap luka ada cahaya yang menanti.
-        </p>
-        <p>
-            Hati ini menari di antara angin,<br>
-            Mengumpulkan serpihan-serpihan kenangan,<br>
-            Karena hidup adalah puisi yang tak berakhir,<br>
-            Selalu ada cerita baru yang terus bergulir.
-        </p>
+        <div class="modal-nav">
+            <button id="prevBtn" class="nav-btn">←</button>
+            <button id="nextBtn" class="nav-btn">→</button>
+        </div>
+
+        <div class="poetry">
+            <h2>Puisi Kehidupan</h2>
+            <p>
+                Dalam hening malam yang penuh dengan bintang,<br>
+                Langit menari bersama bayang-bayang,<br>
+                Di antara debu-debu waktu yang terbuang,<br>
+                Aku mencari jejak langkah yang hilang.
+            </p>
+            <p>
+                Mimpi dan kenyataan berbicara tanpa suara,<br>
+                Di mana kita berlari mengejar asa,<br>
+                Lalu terjatuh dalam diam yang menggetarkan,<br>
+                Namun, di setiap luka ada cahaya yang menanti.
+            </p>
+            <p>
+                Hati ini menari di antara angin,<br>
+                Mengumpulkan serpihan-serpihan kenangan,<br>
+                Karena hidup adalah puisi yang tak berakhir,<br>
+                Selalu ada cerita baru yang terus bergulir.
+            </p>
+        </div>
     </div>
 
     <script src="script2.js"></script>
